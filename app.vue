@@ -4,7 +4,7 @@ import { initData } from '@telegram-apps/sdk-vue'
 const user = ref({})
 
 onMounted(() => {
-  user.value = initData.user || {}
+  user.value = initData.user() || {}
 })
 </script>
 
