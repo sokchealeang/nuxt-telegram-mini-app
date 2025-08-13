@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import { initData } from '@telegram-apps/sdk-vue'
+import { initData, useSignal } from '@telegram-apps/sdk-vue'
 
-const user = ref({})
-
-onMounted(() => {
-  user.value = initData.user() || {}
-})
+const initDataRaw = useSignal(initData.raw)
 </script>
 
 <template>
   <div>
-    <h2>Welcome, {{ user }}</h2>
+    <h2>Welcome, {{ initDataRaw }}</h2>
   </div>
 </template>
